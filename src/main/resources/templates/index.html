@@ -1,19 +1,66 @@
 
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
-    <head th:insert="~{fragments/header :: header}">
-        <title>Vivero Application</title>
-        <meta http-equiv="Context-Type" content="text/html;charset=UTF-8"/>
-        <link href="../../public/css/bootstrap.min.css"
-              th:href="@{/webjars/bootstrap/4.6.1/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
-        <script src="http://cdn.jsdelivr.net/webjars/jquery/3.6.0/jquery.min.js" th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
+    <head>
+        <title>Vivero Application -  Página de Inicio</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+      <link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+          <link rel="stylesheet" href="css/style.css">
+        <script src="http://cdn.jsdelivr.net/webjars/jquery/3.6.0/jquery.min.js">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div th:replace="~{fragments/headers :: mainmenu}"></div>
+    <div class="container m-3 p-5"></div>
+    
+    <div class="container-fluid mt-5">
+        <!-- Alerta antes de la barra de navegación -->
+        <div class="alert alert-dismissible fade show alert-warning fixed-bottom">
+          Aviso de Cookies: Utilizamos cookies propias y de terceros para obtener datos estadísticos de la navegación de nuestros usuarios y mejorar nuestros servicios. Si acepta o continúa navegando, consideramos que acepta su uso. Puede cambiar la configuración u obtener más información aquí <a href="#">Enlace a política de recogida y tratamiento de cookies.</a>
+        <button type="button" class="close" data-dismiss="alert">x</button>
+        </div>
+          <!-- Barra de Navegación-->
+        <header class="row"> 
+            <nav class="navbar navbar-expand-sm navbar-light bg-primary fixed-top mt-5"><a href="#" class="navbar-brand"> <img src="./ecommerce-coches-final/images/logotipo2.PNG" alt="imagen logo empresa" title="logo DIW-co" width="100" height="100"></a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#barra-navegacion" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Boton navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <span class="navbar-text text-white mr-2 d-none d-sm-none d-md-block">Coches nuevos y de ocasión <br> Asegura tu bienestar con nosotros</span>
+            <div class="collapse navbar-collapse" id="barra-navegacion">
+                <ul class="navbar-nav mb-2 mb-lg-0 ml-sm-5">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Nuestra tienda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./ecommerce-coches-final/nosotros.html">Sobre nosotros</a>
+                    </li>
+                    <li class="nav-item dropdown droptop">
+                      <a class="nav-link dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">Noticias</a>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="./ecommerce-coches-final/acceso.html">Acceso Usuarios</a>
+                        <a class="dropdown-item" href="./ecommerce-coches-final/registro.html">Registrate</a>
+                        <a class="dropdown-item" href="./ecommerce-coches-final/carrito.html">Carrito de la compra</a>
+                      </div>
+                    </li>
+                    <li class="nav-item dropdown dropdown">
+                      <a class="nav-link dropdown-toggle" data-toggle="dropdown">Contacto</a>
+                      <div class="dropdown-menu">
+                          <a class="dropdown-item" href="./ecommerce-coches-final/contacto.html">¿Dónde estamos?</a>
+                          <a class="dropdown-item" href="./ecommerce-coches-final/buscar.html">Servicio al cliente</a>
+                      </div>
+                    </li>
+                </ul>
+            </div>
+            <form class="form-inline">
+              <input class="btn btn-warning gap-2 btn-sm m-2" data-toggle="modal" data-target="#entrar" type="button" value="Login">
+              <input class="btn btn-warning btn-sm" data-toggle="modal" data-target="#registro" type="button" value="Registro">
+          </form>
+            </nav>
+        </header>
+    </div>
 
-        <h1 th:text="${titulo}">Vivero APP</h1>
-        
     </body>
 </html>

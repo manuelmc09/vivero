@@ -1,0 +1,25 @@
+
+/* 
+    Created on : 22-nov-2022, 17:45:53
+    Author     : mmacho
+*/
+
+.navbar{
+    height: 70px;
+    border-bottom: burlywood;
+    background-color: cyan;
+}
+.logo{
+    height: 50px;
+}
+h3{
+	text-align: center;
+}
+body{
+	background-color: grey;
+}
+.nav-link{
+    font-weight: bold;
+    font-size: 20px;
+
+}
