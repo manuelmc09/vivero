@@ -1,7 +1,9 @@
 package com.daw.manuel.vivero.services;
 
 import com.daw.manuel.vivero.entities.Pedidos;
+import com.daw.manuel.vivero.entities.Productos;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -14,7 +16,11 @@ public interface PedidosService {
 
     Optional<Pedidos> porId(Long id);
 
-    Pedidos nuevoPedido(Pedidos pedido);
+    List<Pedidos> findPedidoUser();
+
+    Pedidos save(Pedidos pedido);
+
+    Pedidos nuevoPedido(Map<Productos, Integer> carrito);
 
     boolean borrarPorId(Long id);
 

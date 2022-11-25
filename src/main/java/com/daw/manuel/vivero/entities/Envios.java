@@ -41,7 +41,7 @@ public class Envios implements Serializable {
     @Id
     @Column(name = "ENVIOS_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     @Column(name = "DIRECCION", nullable = false, columnDefinition = "VARCHAR(80)")
     private String direccion;
     @Column(name = "FECHA_ENVIO", nullable = false)

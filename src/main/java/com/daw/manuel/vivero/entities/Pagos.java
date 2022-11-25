@@ -46,12 +46,12 @@ public class Pagos implements Serializable {
     @Id
     @Column(name = "PAGOS_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     @Column(name = "FECHA_PAGO", nullable = false)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private LocalDate fechaPago;
-    @Column(name = "PRECIO_PAGO", nullable = false, precision = 6, scale = 2)
-    private BigDecimal precioPago;
+    @Column(name = "PRECIO_PAGO")
+    private float precioPago;
     @Column(name = "TIPO_PAGO", nullable = false, length = 8)
     @Enumerated(value = EnumType.STRING)
     private TipodePago tipoPago;

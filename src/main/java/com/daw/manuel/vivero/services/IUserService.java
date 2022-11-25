@@ -8,5 +8,5 @@ import com.daw.manuel.vivero.entities.Usuario;
  */
 public interface IUserService {
 
-    public Integer saveuser(Usuario user);
+    public Long saveuser(Usuario user);
 }

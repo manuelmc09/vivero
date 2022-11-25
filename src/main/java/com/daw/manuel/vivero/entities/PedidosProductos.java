@@ -44,30 +44,30 @@ public class PedidosProductos implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long Id;
+    private Long Id;
     @Column(name = "PEDIDOS_ID", insertable = false, updatable = false)
-    private long pedidosId;
+    private Long pedidosId;
     @Column(name = "PRODUCTOS_ID", insertable = false, updatable = false)
-    private long productosId;
+    private Long productosId;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PEDIDOS_ID")
     private Pedidos pedido;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PRODUCTOS_ID")
     private Productos producto;
-    @Column(name = "PRECIOFINAL", precision = 6, scale = 2)
-    private BigDecimal precioFinal;
+    @Column(name = "PRECIOFINAL")
+    private float precioFinal;
 
     
 
-    public PedidosProductos(long Id, long pedidosId, long productosId, BigDecimal precioFinal) {
+    public PedidosProductos(Long Id, Long pedidosId, Long productosId, float precioFinal) {
         this.Id = Id;
         this.pedidosId = pedidosId;
         this.productosId = productosId;
         this.precioFinal = precioFinal;
     }
 
-    public PedidosProductos(long pedidosId, long productosId, BigDecimal precioFinal) {
+    public PedidosProductos(Long pedidosId, Long productosId, float precioFinal) {
         this.pedidosId = pedidosId;
         this.productosId = productosId;
         this.precioFinal = precioFinal;
@@ -83,7 +83,7 @@ public class PedidosProductos implements Serializable {
     /**
      * @param Id the Id to set
      */
-    public void setId(long Id) {
+    public void setId(Long Id) {
         this.Id = Id;
     }
 
@@ -97,7 +97,7 @@ public class PedidosProductos implements Serializable {
     /**
      * @param pedidosId the pedidosId to set
      */
-    public void setPedidosId(long pedidosId) {
+    public void setPedidosId(Long pedidosId) {
         this.pedidosId = pedidosId;
     }
 
@@ -111,7 +111,7 @@ public class PedidosProductos implements Serializable {
     /**
      * @param productosId the productosId to set
      */
-    public void setProductosId(long productosId) {
+    public void setProductosId(Long productosId) {
         this.productosId = productosId;
     }
 
@@ -132,14 +132,14 @@ public class PedidosProductos implements Serializable {
     /**
      * @return the precioFinal
      */
-    public BigDecimal getPrecioFinal() {
+    public float getPrecioFinal() {
         return precioFinal;
     }
 
     /**
      * @param precioFinal the precioFinal to set
      */
-    public void setPrecioFinal(BigDecimal precioFinal) {
+    public void setPrecioFinal(float precioFinal) {
         this.precioFinal = precioFinal;
     }
 

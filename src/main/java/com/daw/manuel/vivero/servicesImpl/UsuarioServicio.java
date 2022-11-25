@@ -23,15 +23,13 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 @Transactional
-public class UsuarioServicio implements IUserService, UserDetailsService 
-{
+public class UsuarioServicio implements IUserService, UserDetailsService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
-
+//    @Autowired
+//    private BCryptPasswordEncoder passwordEncoder;
     public List<Usuario> listAll() {
         return usuarioRepository.findAll();
     }
@@ -49,14 +47,11 @@ public class UsuarioServicio implements IUserService, UserDetailsService
     }
 
     @Override
-    public Integer saveuser(Usuario user) {
-        String passwd = user.getPassword();
-        String name = user.getNombre();
-        String encodedPasswod = passwordEncoder.encode(passwd);
-        user.setPassword(encodedPasswod);
-        user.setNombre(name);
+    public Long saveuser(Usuario user) {
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        user.setPassword(encoder.encode(user.getPassword()));
         user = usuarioRepository.save(user);
-        return (int) user.getId();
+        return (Long) user.getId();
     }
 
     @Override
@@ -72,7 +67,7 @@ public class UsuarioServicio implements IUserService, UserDetailsService
 
         org.springframework.security.core.userdetails.User springUser = null;
 
-            // opt.isEmpty() da error
+        // opt.isEmpty() da error
         if (opt != null && !opt.isPresent()) {
             throw new UsernameNotFoundException("El usuario-a con el email: " + email + " no ha sido encontrado");
         } else {

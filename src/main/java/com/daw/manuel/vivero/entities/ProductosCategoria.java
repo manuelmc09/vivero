@@ -42,11 +42,11 @@ public class ProductosCategoria implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long Id;
+    private Long Id;
     @Column(name = "PRODUCTOS_ID", insertable = false, updatable = false)
-    private long productosId;
+    private Long productosId;
     @Column(name = "CATEGORIAS_ID", insertable = false, updatable = false)
-    private long categoriasId;
+    private Long categoriasId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PRODUCTOS_ID")
@@ -60,18 +60,18 @@ public class ProductosCategoria implements Serializable {
         return Id;
     }
 
-    public ProductosCategoria(long Id, long productosId, long categoriasId) {
+    public ProductosCategoria(Long Id, Long productosId, Long categoriasId) {
         this.Id = Id;
         this.productosId = productosId;
         this.categoriasId = categoriasId;
     }
 
-    public ProductosCategoria(long productosId, long categoriasId) {
+    public ProductosCategoria(Long productosId, Long categoriasId) {
         this.productosId = productosId;
         this.categoriasId = categoriasId;
     }
 
-    public void setId(long Id) {
+    public void setId(Long Id) {
         this.Id = Id;
     }
 
@@ -85,7 +85,7 @@ public class ProductosCategoria implements Serializable {
     /**
      * @param productosId the productosId to set
      */
-    public void setProductosId(long productosId) {
+    public void setProductosId(Long productosId) {
         this.productosId = productosId;
     }
 
@@ -99,7 +99,7 @@ public class ProductosCategoria implements Serializable {
     /**
      * @param categoriasId the categoriasId to set
      */
-    public void setCategoriasId(long categoriasId) {
+    public void setCategoriasId(Long categoriasId) {
         this.categoriasId = categoriasId;
     }
 

@@ -21,6 +21,20 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.logging.Level;
+import javax.annotation.PostConstruct;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
@@ -73,24 +87,31 @@ public class DbInitializer {
         //  Productos
         logger.info("Create Productos objects ....");
         List<Productos> losProductos = new ArrayList<>();
-        Productos[] productos = {
-            new Productos( "Manzano Reineta Roja","Reineta Roja del Canada, Francesa, de Chapa, Garciasol etc es la más típica en Asturias ya que estos árboles tienden a formar en copa",BigDecimal.valueOf(8.95), 55)
-        };
-        for (Productos p : productos) {
-            productosRepository.save(p);
-            logger.info("Producto insertado correctamente");
-        }
+//        Productos[] productos = {
+//            new Productos( "Manzano Reineta Roja","Reineta Roja del Canada, Francesa, de Chapa, Garciasol etc es la más típica en Asturias ya que estos árboles tienden a formar en copa",BigDecimal.valueOf(8.95), 55,"")
+//        };
+        Productos raxao=new Productos("Raxao","Fruto de tamaño mediano, de forma redonda a troncocónica bastante aplanada, epidermis rayada de color rojo, la zona más expuesta con tonalidades naranja-marrón sobre fondo verde o amarillo verdoso.Variedad ácida.",8.95f, 55,"");
+        raxao.setImgUrl("C:\\Users\\mmacho\\Documents\\NetBeansProjects\\viverosAveiga\\src\\main\\resources\\static\\images\\raxao.png");
+        productosRepository.save(raxao);
+        Productos regona=new Productos("Regona","Fruto de tamaño mediano o pequeño en situaciones de sobrecarga de producción, de forma redondeada aplanada, color verde o amarillo-verdoso con tonalidades amarronadas, abundantes lenticelas pequeñas con aureola blanca.Variedad ácido-amarga.",8.95f, 55,"");
+        regona.setImgUrl("resources\\static\\images\\regona.png");
+        productosRepository.save(regona);
+//        for (Productos p : productos) {
+//            productosRepository.save(p);
+//            logger.info("Producto insertado correctamente");
+//        }
         //  Pedidos
         logger.info("Create Pedidos objects ....");
         List<Pedidos> losPedidos= new ArrayList<>();
         Pedidos[] pedidos = {
-            new Pedidos(LocalDate.parse("2022-12-07"), BigDecimal.valueOf(152.15),losCli[0]),      
-            new Pedidos(LocalDate.parse("2022-12-15"), BigDecimal.valueOf(107.4),losCli[0]),
-            new Pedidos(LocalDate.parse("2022-12-10"), BigDecimal.valueOf(196.9),losCli[1])
+            new Pedidos(LocalDate.parse("2022-12-07"), 152.15f,losCli[0]),      
+            new Pedidos(LocalDate.parse("2022-12-15"), 107.4f,losCli[0]),
+            new Pedidos(LocalDate.parse("2022-12-10"), 196.9f,losCli[1])
         };
         for (Pedidos pe : pedidos) {
             pedidosRepository.save(pe);
             logger.info("Pedido insertado correctamente");
         }
     }
+  
 }

@@ -5,62 +5,81 @@
     <head>
         <title>Vivero Application -  Página de Inicio</title>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">        
-      <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-          <link rel="stylesheet" href="css/style.css">
-        <script src="http://cdn.jsdelivr.net/webjars/jquery/3.6.0/jquery.min.js">
-        </script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+                integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-    <div class="container m-3 p-5"></div>
-    
-    <div class="container-fluid mt-5">
+        <div class="container m-3 p-5"></div>
+
+        <div class="container-fluid mt-5">
+
         <!-- Alerta antes de la barra de navegación -->
         <div class="alert alert-dismissible fade show alert-warning fixed-bottom">
-          Aviso de Cookies: Utilizamos cookies propias y de terceros para obtener datos estadísticos de la navegación de nuestros usuarios y mejorar nuestros servicios. Si acepta o continúa navegando, consideramos que acepta su uso. Puede cambiar la configuración u obtener más información aquí <a href="#">Enlace a política de recogida y tratamiento de cookies.</a>
-        <button type="button" class="close" data-dismiss="alert">x</button>
+            Aviso de Cookies: Utilizamos cookies propias y de terceros para obtener datos estadísticos de la navegación de nuestros usuarios y mejorar nuestros servicios. Si acepta o continúa navegando, consideramos que acepta su uso. Puede cambiar la configuración u obtener más información aquí <a href="#">Enlace a política de recogida y tratamiento de cookies.</a>
+            <button type="button" class="close" data-dismiss="alert">x</button>
         </div>
-          <!-- Barra de Navegación-->
+
+        <!-- Barra de Navegación-->
         <header class="row"> 
-            <nav class="navbar navbar-expand-sm navbar-light bg-primary fixed-top mt-5"><a href="#" class="navbar-brand"> <img src="./ecommerce-coches-final/images/logotipo2.PNG" alt="imagen logo empresa" title="logo DIW-co" width="100" height="100"></a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#barra-navegacion" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Boton navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <span class="navbar-text text-white mr-2 d-none d-sm-none d-md-block">Coches nuevos y de ocasión <br> Asegura tu bienestar con nosotros</span>
-            <div class="collapse navbar-collapse" id="barra-navegacion">
-                <ul class="navbar-nav mb-2 mb-lg-0 ml-sm-5">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Nuestra tienda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./ecommerce-coches-final/nosotros.html">Sobre nosotros</a>
-                    </li>
-                    <li class="nav-item dropdown droptop">
-                      <a class="nav-link dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">Noticias</a>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="./ecommerce-coches-final/acceso.html">Acceso Usuarios</a>
-                        <a class="dropdown-item" href="./ecommerce-coches-final/registro.html">Registrate</a>
-                        <a class="dropdown-item" href="./ecommerce-coches-final/carrito.html">Carrito de la compra</a>
-                      </div>
-                    </li>
-                    <li class="nav-item dropdown dropdown">
-                      <a class="nav-link dropdown-toggle" data-toggle="dropdown">Contacto</a>
-                      <div class="dropdown-menu">
-                          <a class="dropdown-item" href="./ecommerce-coches-final/contacto.html">¿Dónde estamos?</a>
-                          <a class="dropdown-item" href="./ecommerce-coches-final/buscar.html">Servicio al cliente</a>
-                      </div>
-                    </li>
-                </ul>
-            </div>
-            <form class="form-inline">
-              <input class="btn btn-warning gap-2 btn-sm m-2" data-toggle="modal" data-target="#entrar" type="button" value="Login">
-              <input class="btn btn-warning btn-sm" data-toggle="modal" data-target="#registro" type="button" value="Registro">
-          </form>
+            <nav class="navbar navbar-expand-sm navbar-light bg-success fixed-top mt-5"><a href="#" class="navbar-brand"> <img src="images/logotipo2.PNG" alt="imagen logo empresa" title="logo DIW-co" width="100" height="100"></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#barra-navegacion" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Boton navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                    <span class="navbar-text text-dark mr-2 d-none d-sm-none d-md-block">Especialistas en Manzanos de Sidra y Árboles frutales <br> Servicio Personalizado </span>
+                <div class="collapse navbar-collapse" id="barra-navegacion">
+                    <ul class="navbar-nav mb-2 mb-lg-0 ml-sm-5">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cepellon.html">Frutales en Maceta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/temporada.html">Frutales de Temporada</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contacto.html">Contactanos</a>
+                        </li>
+                        <li class="nav-item dropdown dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Servicios</a>
+                        <div class="dropdown-menu">
+                            <a  sec:authorize="isAuthenticated()" class="dropdown-item" href="user/login.html">Acceso Usuarios</a>
+                            <a  sec:authorize="isAuthenticated()" class="dropdown-item" href="user/registro.html">Registrate</a>
+                            <a  sec:authorize="isAuthenticated()" class="dropdown-item" href="user/carrito.html">Carrito de la compra</a>
+                            <a  sec:authorize="isAuthenticated()" class="dropdown-item" href="user/logout.html">Cerrar sesion</a>
+                        </div>
+                        </li>
+                    </ul>
+                </div>
+
             </nav>
-        </header>
+      <section>
+        <div class="container">
+            <h3 class="pt-3 m-2">Nuestros productos</h3>
+            <div class="row justify-content-center">
+                <div id="producto" class="col-lg-3 col-md-6 col-12" 
+                 th:each="producto : ${productos}">
+                <img id="imgproducto" th:src="${producto.imgUrl}"
+		alt="Imagen no disponible">
+                    <h6 th:text="${producto.nombre}"></h6>
+                    <h6 th:text="${producto.precio} +'€'"></h6>
+                    <h6 th:text="${producto.stock} +' uds disponibles'"></h6>
+                        <a id="azul" th:if="${producto.stock} !=0"
+			th:href="'/aniadirproductocarrito/' + ${producto.id}"
+			sec:authorize="isAuthenticated()">COMPRAR</a> <a id="rojo"
+			th:if="${producto.stock} ==0" sec:authorize="isAuthenticated()">AGOTADO
+			TEMPORALMENTE</a>
+                </div>
+            </div>
+        </div>
+        
+        
     </div>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     </body>
 </html>

@@ -52,12 +52,12 @@ public class Pedidos implements Serializable {
     @Id
     @Column(name = "PEDIDOS_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     @Column(name = "FECHA_PEDIDO", nullable = false)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private LocalDate fechaPedido;
-    @Column(name = "PRECIO", nullable = false, precision = 6, scale = 2)
-    private BigDecimal precio;
+    @Column(name = "PRECIO")
+    private float precio;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CLIENTE_ID")
@@ -71,7 +71,7 @@ public class Pedidos implements Serializable {
     @JsonBackReference
     private List<PedidosProductos> pedidos = new ArrayList<>();
 
-    public Pedidos(LocalDate fechaPedido, BigDecimal precio, Clientes cliente) {
+    public Pedidos(LocalDate fechaPedido, float precio, Clientes cliente) {
         this.fechaPedido = fechaPedido;
         this.precio = precio;
         this.cliente = cliente;

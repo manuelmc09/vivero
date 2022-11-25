@@ -34,7 +34,7 @@ public class Usuario {
 
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
     @Column(name = "NOMBRE", nullable = false, columnDefinition = "VARCHAR(60)")
     private String nombre;
     @Column(name = "CONTRASEÑA", nullable = false, columnDefinition = "VARCHAR(20)")

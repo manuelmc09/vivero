@@ -31,7 +31,7 @@ public class UserController {
             @ModelAttribute Usuario user,
             Model model
     ) {
-        Integer id = iuserService.saveuser(user);
+        Long id = iuserService.saveuser(user);
         String message = "Usuario '" + id + "' guardado correctamente !";
         model.addAttribute("msg", message);
         return "registerUser";

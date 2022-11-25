@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,6 +13,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -46,15 +48,18 @@ public class Productos implements Serializable {
     @Id
     @Column(name = "PRODUCTO_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     @Column(name = "NOMBRE", nullable = false, unique = true, columnDefinition = "VARCHAR(50)")
     private String nombre;
-    @Column(name = "CARACTERISTICAS", nullable = false, columnDefinition = "VARCHAR(200)")
+    @Column(name = "CARACTERISTICAS", nullable = false, columnDefinition = "VARCHAR(255)")
     private String caracteristicas;
+    @Column(name = "PHOTO")
+    @Basic(fetch = FetchType.LAZY)
+    private String imgUrl;
     @Column(name = "STOCK", columnDefinition = "Integer default 0")
     private int stock;
-    @Column(name = "PRECIO", nullable = false, precision = 6, scale = 2)
-    private BigDecimal precio;
+    @Column(name = "PRECIO")
+    private float precio;
 
     @OneToMany(mappedBy = "producto",
             cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -66,13 +71,12 @@ public class Productos implements Serializable {
     @JsonBackReference
     private List<ProductosCategoria> categorias = new ArrayList<>();
 
-    public Productos(String nombre, String caracteristicas, BigDecimal precio, int stock) {
+    public Productos(String nombre, String caracteristicas, float precio, int stock,String imgUrl) {
         this.nombre = nombre;
         this.caracteristicas = caracteristicas;
         this.stock = stock;
         this.precio = precio;
+        this.imgUrl = imgUrl;
     }
-    
-    
 
 }

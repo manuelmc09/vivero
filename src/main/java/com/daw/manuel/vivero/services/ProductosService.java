@@ -15,6 +15,10 @@ public interface ProductosService {
 
     Optional<Productos> porId(Long id);
 
+    Optional<Productos> porNombre(String nombre);
+
+    List<Productos> porCategorias(Long idCategoria);
+
     Productos nuevoProducto(Productos producto);
 
     boolean borrarPorId(Long id);

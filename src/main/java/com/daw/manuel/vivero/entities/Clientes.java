@@ -44,7 +44,7 @@ public class Clientes implements Serializable {
     @Id
     @Column(name = "CLIENTE_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     @Column(name = "NOMBRE", nullable = false, columnDefinition = "VARCHAR(50)")
     private String nombre;
     @Column(name = "DNI", nullable = false, columnDefinition = "VARCHAR(9)")

@@ -1,5 +1,6 @@
 package com.daw.manuel.vivero.servicesImpl;
 
+import com.daw.manuel.vivero.entities.Categorias;
 import com.daw.manuel.vivero.entities.Clientes;
 import com.daw.manuel.vivero.entities.Pagos;
 import com.daw.manuel.vivero.entities.Productos;
@@ -36,6 +37,18 @@ public class ProductosServiceImpl implements ProductosService {
     @Transactional(readOnly = true)
     public Optional<Productos> porId(Long id) {
         return productosRepository.findById(id);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Optional<Productos> porNombre(String nombre) {
+        return productosRepository.porNombre(nombre);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Productos> porCategorias(Long idCategoria) {
+        return productosRepository.porCategorias(idCategoria);
     }
 
     @Override
